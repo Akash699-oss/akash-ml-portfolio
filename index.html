@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Akash Singh | Machine Learning Engineer</title>
+<meta name="description" content="Akash Singh - Machine Learning Engineer, Computer Vision, Python, Applied AI" />
+<style>
+  :root{
+    --bg:#0b1020;
+    --panel:#111831;
+    --panel2:#0f152a;
+    --text:#edf2ff;
+    --muted:#a9b4d0;
+    --accent:#64ffda;
+    --accent2:#7aa2ff;
+    --line:#273250;
+    --shadow: 0 18px 50px rgba(0,0,0,.30);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background:
+      radial-gradient(circle at 15% 15%, rgba(100,255,218,.08), transparent 26%),
+      radial-gradient(circle at 85% 20%, rgba(122,162,255,.08), transparent 24%),
+      var(--bg);
+    color:var(--text);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:1120px;margin:auto;padding:0 22px}
+  nav{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter: blur(14px);
+    background:rgba(11,16,32,.76);
+    border-bottom:1px solid rgba(255,255,255,.05);
+  }
+  .nav-inner{height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .brand{font-weight:800;letter-spacing:.3px}
+  .brand span{color:var(--accent)}
+  .nav-links{display:flex;gap:18px;flex-wrap:wrap}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:.95rem}
+  .nav-links a:hover{color:var(--accent)}
+  .hero{
+    min-height:88vh;
+    display:grid;
+    grid-template-columns:1.35fr .65fr;
+    gap:48px;
+    align-items:center;
+    padding:80px 0 50px;
+  }
+  .eyebrow{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--accent);margin-bottom:12px}
+  h1{font-size:clamp(3rem,7vw,6.5rem);line-height:.93;margin:0 0 18px;letter-spacing:-4px}
+  .role{font-size:clamp(1.25rem,2.4vw,2rem);color:var(--muted);font-weight:700}
+  .role strong{color:var(--text)}
+  .lead{max-width:760px;color:var(--muted);font-size:1.08rem;margin:24px 0 28px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{
+    appearance:none;cursor:pointer;font:inherit;
+    text-decoration:none;color:var(--text);
+    padding:12px 18px;border-radius:12px;
+    border:1px solid var(--line);
+    background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+    transition:.25s ease; font-weight:700;
+  }
+  .btn.primary{border-color:rgba(100,255,218,.5);color:var(--accent)}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.22)}
+  .terminal{
+    background:#080c17;
+    border:1px solid var(--line);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    padding:18px;
+    transform:rotate(1.5deg);
+    animation:float 5s ease-in-out infinite;
+  }
+  .dots{display:flex;gap:7px;margin-bottom:16px}
+  .dot{width:10px;height:10px;border-radius:50%;background:#3c496b}
+  .terminal pre{
+    margin:0;white-space:pre-wrap;
+    font: .95rem/1.75 ui-monospace,SFMono-Regular,Menlo,monospace;
+    color:#d8e2ff;
+  }
+  .k{color:var(--accent2)} .v{color:var(--accent)} .c{color:#6f7da3}
+  section{padding:78px 0}
+  .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:26px}
+  h2{font-size:clamp(2rem,4vw,3rem);margin:0;letter-spacing:-1.7px}
+  .num{font-family:ui-monospace,monospace;color:var(--accent)}
+  .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+  .card{
+    grid-column:span 6;
+    background:linear-gradient(180deg,rgba(17,24,49,.95),rgba(15,21,42,.92));
+    border:1px solid var(--line);
+    border-radius:18px;padding:24px;
+    box-shadow:0 8px 30px rgba(0,0,0,.15);
+    transition:.25s ease;
+  }
+  .card:hover{transform:translateY(-5px);border-color:rgba(100,255,218,.36)}
+  .card.full{grid-column:span 12}
+  .card h3{margin:0 0 6px;font-size:1.22rem}
+  .meta{color:var(--accent);font-family:ui-monospace,monospace;font-size:.92rem}
+  .muted{color:var(--muted)}
+  ul{padding-left:20px;margin-bottom:0}
+  li{margin:8px 0;color:#d9e1f5}
+  .skills{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{
+    padding:9px 12px;border-radius:999px;
+    border:1px solid var(--line);
+    background:#0c1329;color:#cfd8ef;
+    font-family:ui-monospace,monospace;font-size:.9rem;
+    transition:.2s;
+  }
+  .chip:hover{color:var(--accent);border-color:rgba(100,255,218,.45);transform:translateY(-2px)}
+  .timeline{position:relative;padding-left:26px}
+  .timeline:before{content:"";position:absolute;left:7px;top:5px;bottom:5px;width:2px;background:var(--line)}
+  .item{position:relative;margin-bottom:24px}
+  .item:before{
+    content:"";position:absolute;left:-25px;top:7px;
+    width:12px;height:12px;border-radius:50%;
+    background:var(--accent);box-shadow:0 0 0 5px rgba(100,255,218,.08)
+  }
+  footer{padding:40px 0 70px;color:var(--muted);text-align:center}
+  .reveal{opacity:0;transform:translateY(28px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.show{opacity:1;transform:none}
+  .cursor{
+    display:inline-block;width:10px;height:1em;background:var(--accent);
+    vertical-align:-.12em;margin-left:4px;animation:blink 1s steps(1) infinite
+  }
+  @keyframes blink{50%{opacity:0}}
+  @keyframes float{50%{transform:rotate(1.5deg) translateY(-10px)}}
+  @media(max-width:850px){
+    .hero{grid-template-columns:1fr;min-height:auto;padding-top:70px}
+    .terminal{transform:none}
+    .card{grid-column:span 12}
+    h1{letter-spacing:-2.5px}
+  }
+  @media(max-width:640px){
+    .nav-links{display:none}
+    .hero{padding-top:52px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap nav-inner">
+    <div class="brand">&lt;Akash<span>/&gt;</span></div>
+    <div class="nav-links">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a>
+      <a href="#projects">Projects</a><a href="#certifications">Certifications</a><a href="#education">Education</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <div class="eyebrow">hello_world.py</div>
+      <h1>Akash<br>Singh</h1>
+      <div class="role"><strong id="typeTarget"></strong><span class="cursor"></span></div>
+      <p class="lead">
+        Aspiring Machine Learning Engineer with hands-on experience building and evaluating Python-based
+        machine learning and computer vision solutions, including real-time pose estimation, feature extraction,
+        image/video processing, model evaluation, and AI-to-web integration.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">View Projects</a>
+        <a class="btn" id="emailBtn" href="mailto:akash032006singh@gmail.com?subject=Opportunity%20for%20Akash%20Singh">Email Me</a>
+        <button class="btn" id="copyEmailBtn" type="button">Copy Email</button>
+        <a class="btn" id="linkedinBtn"
+           href="https://www.linkedin.com/in/akash-singh/"
+           target="_blank"
+           rel="noopener noreferrer">LinkedIn</a>
+      </div>
+      <p id="actionStatus" class="muted" style="margin-top:12px;font-size:.92rem;"></p>
+    </div>
+
+    <div class="terminal" aria-label="developer profile terminal">
+      <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      <pre><span class="c"># profile.py</span>
+<span class="k">developer</span> = {
+  <span class="v">"name"</span>: "Akash Singh",
+  <span class="v">"focus"</span>: [
+    "Machine Learning",
+    "Computer Vision",
+    "Applied AI"
+  ],
+  <span class="v">"language"</span>: "Python",
+  <span class="v">"status"</span>: "Building & learning"
+}</pre>
+    </div>
+  </section>
+
+  <section id="about" class="reveal">
+    <div class="section-head"><h2>About</h2><div class="num">01</div></div>
+    <div class="card full">
+      <p class="muted">
+        Machine Learning and Computer Vision enthusiast with practical internship exposure at IBM PBEL.
+        Experience includes ML model engineering and evaluation, feature extraction, real-time data processing,
+        image/video pipelines, MediaPipe-based pose estimation, exploratory data analysis, and deployment-oriented
+        integration with web-facing applications.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills" class="reveal">
+    <div class="section-head"><h2>Technical Skills</h2><div class="num">02</div></div>
+    <div class="grid">
+      <div class="card">
+        <h3>Machine Learning & AI</h3>
+        <div class="skills">
+          <span class="chip">Python</span><span class="chip">Machine Learning</span><span class="chip">Computer Vision</span>
+          <span class="chip">MediaPipe</span><span class="chip">Model Evaluation</span><span class="chip">Feature Extraction</span>
+          <span class="chip">Exploratory Data Analysis</span><span class="chip">Real-Time Data Processing</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Programming & Web</h3>
+        <div class="skills">
+          <span class="chip">Java</span><span class="chip">JavaScript</span><span class="chip">HTML5</span>
+          <span class="chip">CSS3</span><span class="chip">React.js</span><span class="chip">Tailwind CSS</span>
+          <span class="chip">Bootstrap</span><span class="chip">REST APIs</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Developer Tools</h3>
+        <div class="skills">
+          <span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">VS Code</span>
+          <span class="chip">Postman</span><span class="chip">Netlify</span>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Core Areas</h3>
+        <div class="skills">
+          <span class="chip">Image/Video Processing</span><span class="chip">Pose Estimation</span>
+          <span class="chip">Landmark Detection</span><span class="chip">ML Pipeline Integration</span>
+          <span class="chip">Component-Based Development</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="reveal">
+    <div class="section-head"><h2>Experience</h2><div class="num">03</div></div>
+    <div class="card full timeline">
+      <div class="item">
+        <h3>Artificial Intelligence Intern (Virtual) — IBM PBEL</h3>
+        <div class="meta">18 June 2025 — 18 July 2025 · Remote</div>
+        <ul>
+          <li>Engineered and evaluated machine learning models in Python using real-world datasets.</li>
+          <li>Built computer vision pipelines for image and video processing and extracted feature representations for downstream analysis.</li>
+          <li>Contributed to model deployment concepts by connecting Python-based AI backends with web-facing client interfaces.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="reveal">
+    <div class="section-head"><h2>Featured Project</h2><div class="num">04</div></div>
+    <div class="card full">
+      <div class="meta">Applied Computer Vision</div>
+      <h3>Body Language AI</h3>
+      <ul>
+        <li>Developed a real-time pose estimation application using MediaPipe landmark detection for live webcam input.</li>
+        <li>Extracted body-coordinate features and converted pose landmarks into interpretable body-language signals.</li>
+        <li>Considered latency and accuracy trade-offs for real-time inference.</li>
+        <li>Deployed the browser-based application on Netlify, demonstrating end-to-end real-time processing and user-facing integration.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="certifications" class="reveal">
+    <div class="section-head"><h2>Certifications & Honors</h2><div class="num">05</div></div>
+    <div class="grid">
+      <div class="card"><h3>Oracle Certified AI Foundations Associate</h3><div class="meta">2025</div><p class="muted">Core Artificial Intelligence and Cloud concepts.</p></div>
+      <div class="card"><h3>Exploratory Data Analysis — Gold Category</h3><div class="meta">NASSCOM FutureSkills Prime · 2026</div><p class="muted">Govt.-approved industry assessment · 72% score.</p></div>
+      <div class="card"><h3>Python Foundation Certification</h3><div class="meta">Infosys Springboard · 2026</div><p class="muted">Python fundamentals, OOPs, and software logic.</p></div>
+      <div class="card"><h3>Top 10 Winner — GDG Vibe Coding Hackathon</h3><div class="meta">Prayagraj · 2026</div><p class="muted">Recognized for building AI/software solutions.</p></div>
+      <div class="card full"><h3>Core Java with Collection Framework</h3><div class="meta">2025</div><p class="muted">60-hour Summer Training at United Global Infoservice.</p></div>
+    </div>
+  </section>
+
+  <section id="education" class="reveal">
+    <div class="section-head"><h2>Education</h2><div class="num">06</div></div>
+    <div class="card full">
+      <h3>Bachelor of Technology (B.Tech)</h3>
+      <div class="meta">United Institute of Technology, Naini, Prayagraj · 2024 — 2028</div>
+      <p class="muted">CGPA: 6.73 / 10</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Designed as an interactive developer-style resume for Akash Singh.</div>
+</footer>
+
+<script>
+const roles = [
+  "Machine Learning Engineer",
+  "Computer Vision Developer",
+  "Python & Applied AI"
+];
+let roleIndex = 0, charIndex = 0, deleting = false;
+const target = document.getElementById("typeTarget");
+
+function type(){
+  const current = roles[roleIndex];
+  if(!deleting){
+    target.textContent = current.slice(0, ++charIndex);
+    if(charIndex === current.length){
+      deleting = true;
+      setTimeout(type, 1200);
+      return;
+    }
+  }else{
+    target.textContent = current.slice(0, --charIndex);
+    if(charIndex === 0){
+      deleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+    }
+  }
+  setTimeout(type, deleting ? 45 : 75);
+}
+type();
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add("show");
+      observer.unobserve(e.target);
+    }
+  });
+},{threshold:.12});
+
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+// Contact-button fallbacks
+const emailAddress = "akash032006singh@gmail.com";
+const emailBtn = document.getElementById("emailBtn");
+const copyEmailBtn = document.getElementById("copyEmailBtn");
+const linkedinBtn = document.getElementById("linkedinBtn");
+const actionStatus = document.getElementById("actionStatus");
+
+emailBtn.addEventListener("click", function () {
+  actionStatus.textContent = "Opening your default email app. If nothing opens, use “Copy Email”.";
+});
+
+copyEmailBtn.addEventListener("click", async function () {
+  try {
+    await navigator.clipboard.writeText(emailAddress);
+    actionStatus.textContent = "Email copied: " + emailAddress;
+  } catch (e) {
+    const temp = document.createElement("textarea");
+    temp.value = emailAddress;
+    document.body.appendChild(temp);
+    temp.select();
+    document.execCommand("copy");
+    temp.remove();
+    actionStatus.textContent = "Email copied: " + emailAddress;
+  }
+});
+
+linkedinBtn.addEventListener("click", function () {
+  actionStatus.textContent = "Opening LinkedIn in a new tab.";
+});
+
+</script>
+</body>
+</html>
